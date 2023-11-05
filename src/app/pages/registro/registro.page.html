@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <<ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="nombre" name="firstName"></ion-input>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" name="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasenna" name="password"></ion-input>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-input  [(ngModel)]="rut" label="Ingrese Rut:" type="tel" labelPlacement="floating" placeholder="21333111-1"></ion-input>
+      </ion-item>
+  
+  
+
+      <ion-label>Region</ion-label>
+
+      <ion-list>
+        <ion-item>
+          <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione" [(ngModel)]="regionSel">
+            <ion-select-option [value]="r.id" *ngFor="let r of regiones">{{r.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+      <ion-label>Comuna</ion-label>
+
+      <ion-list>
+        <ion-item>
+          <ion-select  placeholder="Seleccione" [(ngModel)]="comunaSel">
+            <ion-select-option [value]="r.id" *ngFor="let r of comunas">{{r.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+
+
+
+
+      <ion-col>
+        <ion-button class="xico1" (click)="registro()"  shape="round">Crear</ion-button>
+      </ion-col>
+
+    
+        <ion-col>
+          <ion-button class="xico" (click)="volver()" shape="round">Volver</ion-button>
+        </ion-col>
+
+      </ion-card-content>
+
+  </ion-card>
+  </ion-content>

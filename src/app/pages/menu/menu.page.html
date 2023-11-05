@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+      
+  <ion-title color="white" *ngFor="let i of usuario"> BIENVENIDO {{ i.email }}
+
+  </ion-title>
+  <ng-container *ngIf="!loading">
+    <ng-container *ngFor="let menu of arrayMenu">
+      <ion-card class="menuEnabled" [routerLink]="menu.url" *ngIf="menu.disabled">
+        <div class="box">
+          <ion-icon size="large" [name]="menu.icono"></ion-icon>
+          <h3>{{menu.titulo}}</h3>
+        </div>
+      </ion-card> 
+  
+    </ng-container>
+  </ng-container>
+  
+  
+  <ng-container *ngIf="loading"> 
+    <div class="boxSkeleton" *ngFor="let item of [1,2,3,4,5]">
+      <ion-skeleton-text class="skeleton"></ion-skeleton-text>
+    </div>
+  </ng-container>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="custom-menu-content">
+
+
+
+
+<ion-card class="card1">
+<ion-card-content id="car2">
+  <ion-button (click)="mostrarToast()" shape="round" expand="full" (click)="verAsistencia()" class="custom-button custom-attendance-button">Asistencia
+      <ion-icon slot="end" name="calendar-outline"></ion-icon>
+  </ion-button>
+</ion-card-content>
+
+<ion-card-content id="car2">
+  <ion-button (click)="mostrarToast2()"  shape="round" expand="full" (click)="abrirQr()" class="custom-button custom-qr-button">QR
+      <ion-icon slot="end" name="qr-code-outline"></ion-icon>
+  </ion-button>
+</ion-card-content>
+
+<ion-card-content id="car3">
+  <ion-button shape="round" expand="full" (click)="desLogin()" class="custom-button custom-logout-button">Cerrar Sesión
+      <ion-icon slot="end" name="exit-outline"></ion-icon>
+  </ion-button>
+</ion-card-content>
+
+
+</ion-card>
+
+
+</ion-content>
