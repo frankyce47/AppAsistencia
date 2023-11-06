@@ -13,6 +13,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { HttpClientModule } from '@angular/common/http';
 
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
   AngularFireAuthModule,HttpClientModule
   
 ],
-  providers: [{ provide: RouteReuseStrategy, useClass:  IonicRouteStrategy }],
+  providers: [BarcodeScanner,{ provide: RouteReuseStrategy, useClass:  IonicRouteStrategy } ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

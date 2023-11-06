@@ -60,22 +60,22 @@ export class ForgotpassPage {
 
 
 
-  async resetearContra(){
+  async recuperarPassword(){
     const loader = await this.helper.showLoader("Cargando");
     if (this.email == '') {
       await loader.dismiss();
-      this.helper.mostrarAlerta("Debe ingresar un correo." ,"Error");
+      this.helper.mostrarAlerta(" ingrese un correo." ,"Error");
       return;
     }
     try {
       await this.auth.sendPasswordResetEmail(this.email);
-      await this.helper.mostrarAlerta("Debe revisar su correo","Información");
+      await this.helper.mostrarAlerta("Revise su correo","Información");
       await loader.dismiss();
       await this.router.navigateByUrl("login");
     } catch (error:any) {
       if (error.code == 'auth/invalid-email') {
         await loader.dismiss();
-        await this.helper.mostrarAlerta("El correo no es el correcto.","Error");
+        await this.helper.mostrarAlerta("CORREO INCORRECTO","Error");
       }
     }
   }

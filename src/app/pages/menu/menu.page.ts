@@ -67,7 +67,7 @@ export class MenuPage implements OnInit {
 
   }
 
-  async mostrarToast() {
+  async Toast() {
     const toast = await this.toastController.create({
       message: 'ASISTENCIA SECCION: 001D',
       duration: 3000,
@@ -76,7 +76,7 @@ export class MenuPage implements OnInit {
     toast.present();
   }
 
-  async mostrarToast2() {
+  async Toast_2() {
     const toast = await this.toastController.create({
       message: 'ESCANE SU CODIGO',
       duration: 2000,
@@ -85,11 +85,11 @@ export class MenuPage implements OnInit {
     toast.present();
   }
 
-  async mostrarToast3() {
+  async Toast_3() {
     const toast = await this.toastController.create({
       message: 'INFORMACION PERSONAL',
       duration: 2000,
-      position: 'top'
+      position: 'bottom'
     });
     toast.present();
   }
@@ -103,7 +103,7 @@ export class MenuPage implements OnInit {
     }
   }
 
-  async abrirPerfil(){
+  async openProfile(){
     const loader = await this.helper.showLoader("Cargando");
     this.router.navigateByUrl("perfil");
     await loader.dismiss();
@@ -111,14 +111,18 @@ export class MenuPage implements OnInit {
 
   
 
- async verAsistencia(){
+ async Asistencia(){
     const loader = await this.helper.showLoader("Cargando");
     this.router.navigateByUrl("asistencia")
     await loader.dismiss();
   }
 
-  abrirQr(){
+  
+
+  async Qr(){
+    const loader = await this.helper.showLoader("Cargando");
     this.router.navigateByUrl("escann-qr");
+    await loader.dismiss();
   }
 
   async cargarUsuario(){

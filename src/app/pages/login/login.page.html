@@ -1,42 +1,50 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title></ion-title>
+  <ion-toolbar class="tol">
+    <ion-title>INICIO DE SESION
+    </ion-title>
+    <ion-icon slot="end" size="large" name="logo-android"></ion-icon>
+
+
+    <ion-button class="back" slot="start" [routerLink]="'/inicio'">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="contenido" [fullscreen]="true">
 
   <ion-card> 
     <ion-card-header >
-      <ion-card-title color="black">INICIO DE SESION
+      <ion-card-title color="black">
       
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Gmail:</ion-label>
+      <ion-item class="item1">
+        <ion-label  position="floating">Gmail:</ion-label>
         <ion-input  [(ngModel)]= "email" labelPlacement="floating" placeholder=""></ion-input>
-        <ion-note *ngIf="!email">El correo electrónico es obligatorio.</ion-note>
+        <ion-note color="danger" *ngIf="!email">*Obligatorio*</ion-note>
       </ion-item>
-      <ion-item>
+      <ion-item class="item2">
         <ion-label position="floating">Contraseña:</ion-label>
         <ion-input required minlength="6" [(ngModel)]="contrasenna" type="password" labelPlacement="floating" placeholder=""></ion-input>
-        <ion-note *ngIf="!contrasenna">La contraseña es obligatoria.</ion-note>
-        <ion-note *ngIf="contrasenna && contrasenna.length < 6">La contraseña debe tener al menos 6 caracteres.</ion-note>
+        <ion-note color="danger" *ngIf="!contrasenna">*Obligatorio*</ion-note>
+        <ion-note  *ngIf="contrasenna && contrasenna.length < 6"></ion-note>
       </ion-item>
 
     </ion-card-content>
     <ion-row>
       <ion-col>
-        <ion-button (click)="mostrarToast1()" expand="block" (click)="login()" expand="block">Acceder</ion-button>
+        <ion-button class="log" (click)="Toast1()" expand="block" (click)="logearse()" expand="block">Acceder</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button expand="block"(click)="registro()">Registrarse</ion-button>
+        <ion-button class="reg"  (click)="Toast3()" expand="block"(click)="registrarse()">Registrarse</ion-button>
       </ion-col>
     </ion-row>
-    <ion-button (click)="mostrarToast4()" expand="block" (click)="obrirModal()">¿Has olvidado tu contraseña?</ion-button>
+    <ion-button class="forgot" (click)="Toast4()" expand="block" (click)="Modal()">¿Has olvidado tu contraseña?</ion-button>
   </ion-card>
   
 </ion-content>

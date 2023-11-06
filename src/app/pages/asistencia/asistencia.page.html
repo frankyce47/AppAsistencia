@@ -1,13 +1,32 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>asistencia</ion-title>
+  <ion-toolbar class="tol1">
+    <ion-title>Registro de Clase</ion-title>
+
+    <ion-button shape="round" class="botonvolver" [routerLink]="'/menu'">
+      <ion-icon size="large" slot="start" name="caret-back-circle-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistencia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="contenido-menu" [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detalles de la Clase</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Asignatura: {{asignatura}}  </p>
+      <p >Docente: {{docente}}  </p>
+      <p >Fecha: {{fecha}}  </p>
+      <p >Hora: {{hora}}  </p>
+      <p >Leccion: {{leccion}}  </p>
+      <p >Sala: {{sala}}  </p>
+      <p >Seccion: {{seccion}}  </p>
+       
+      
+    </ion-card-content>
+
+  </ion-card>
+
+
 </ion-content>

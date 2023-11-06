@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences'; 
 import { Usuario } from '../models/usuario';
-
+import {Asistencia } from '../models/asistencia';
 
 const storageUser = 'usuarioData';
 
+
+const storageAsistencia = 'asistenciaData';
 
 
 @Injectable({
@@ -15,6 +17,11 @@ export class StorageService {
   public userEmail:string = "";
 
   public userName:string = "";
+
+
+  public asignaturaUser: string = "";
+
+  public docenteUser: string = "";
 
   constructor() { }
 
@@ -52,5 +59,30 @@ export class StorageService {
       }
     }
     this.setItem(storageUser,JSON.stringify(usuario));
+  }
+  async obtenerAsistencia():Promise<Asistencia[]>{
+    const storageData = await this.getItem(storageAsistencia);
+    if (storageData == null) {
+      return[];
+    }
+
+
+    const data:any[] = JSON.parse(storageData);
+    if (data) {
+      return data;
+    }
+    else{
+      return [];
+    }
+  }
+
+  async guardarAsistencia(asistencia:Asistencia[]){
+    var asistencias = await this.obtenerAsistencia();
+    for (const i of asistencias) {
+      if (i) {
+        asistencia.push(i);
+      }
+    }
+    this.setItem(storageAsistencia,JSON.stringify(asistencia));
   }
 }

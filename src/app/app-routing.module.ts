@@ -5,7 +5,7 @@ const redireccionLogin = () => redirectUnauthorizedTo(['/login']);
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
  
@@ -41,6 +41,10 @@ const routes: Routes = [
   {
     path: ':num/perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'resul-qr',
+    loadChildren: () => import('./modals/resul-qr/resul-qr.module').then( m => m.ResulQrPageModule)
   },
 ];
 

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ForgotpassPage } from '../forgotpass/forgotpass.page';
-import { NavController } from '@ionic/angular';
+
 import { UserService } from 'src/app/services/user.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { ActivatedRoute, Routes } from '@angular/router';
+
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HelperService } from 'src/app/services/helper.service';
 import { ToastController } from '@ionic/angular';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Routes } from '@angular/router';
+
 
 
 
@@ -31,26 +32,41 @@ export class LoginPage implements OnInit {
   constructor(private router:Router, 
               private helperService:HelperService,
               private modalCtrl:ModalController, 
-              private route:ActivatedRoute,
-              private navCtrl:NavController,
-              private userService: UserService,
               private storage:StorageService,
               private auth:AngularFireAuth,
               public toastController: ToastController,
-              private formBuilder: FormBuilder
+              private userService: UserService,
+              private route:ActivatedRoute
+            
 
             ) { }
 
   ngOnInit() {
   
   }
+  async Toast1() {
+    const toast = await this.toastController.create({
+      message: "BIENVENIDO A LALOREGISTER ",
+      duration: 4000,
+      position: 'bottom',
+      color: 'success', 
+     
+    });
   
-
-
-
- 
-
- async login() {
+    toast.present();
+  }
+  
+  async Toast4() {
+    const toast = await this.toastController.create({
+      message: 'INGRESE UN CORREO VALIDO',
+      duration: 4000,
+      position: 'bottom',
+    });
+  
+    toast.present();
+  }
+  
+ async logearse() {
   if (!this.email || !this.contrasenna) {
     this.helperService.mostrarAlerta("Por favor, complete todos los campos.", "Advertencia");
     return;
@@ -67,11 +83,11 @@ export class LoginPage implements OnInit {
   }
 }
 
- registro(){
+ registrarse(){
   this.router.navigateByUrl("registro");
 }
 
-async obrirModal() {
+async Modal() {
   const modal = await this.modalCtrl.create({
     component: ForgotpassPage,
   });
@@ -81,26 +97,16 @@ async obrirModal() {
 
 }
 
-async mostrarToast1() {
+async Toast3() {
   const toast = await this.toastController.create({
-    message: "BIENVENIDO A REGISTRO PIECE",
-    duration: 4000,
-    position: 'bottom',
-    color: 'success', 
-   
-  });
-
-  toast.present();
-}
-
-async mostrarToast4() {
-  const toast = await this.toastController.create({
-    message: 'INGRESE UN CORREO VALIDO, INGRESADO ANTERIORMENTE',
-    duration: 4000,
+    message: 'INGRESE LOS DATOS CORRESPONDIENTES',
+    duration: 1000,
     position: 'bottom',
   });
 
   toast.present();
 }
+
+
 
 }

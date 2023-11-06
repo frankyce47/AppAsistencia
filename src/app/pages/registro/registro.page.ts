@@ -5,7 +5,7 @@ import { HelperService } from 'src/app/services/helper.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Region } from 'src/app/models/region';
 import { LocationService } from 'src/app/services/location.service';
-import { Usuario } from 'src/app/models/usuario';
+
 
 
 @Component({
@@ -35,7 +35,7 @@ export class RegistroPage implements OnInit {
 
   ngOnInit() {
 
-    this.vistaUser();
+    this.vistaUsuario();
     this.cargarRegion();
 
 
@@ -50,7 +50,7 @@ export class RegistroPage implements OnInit {
     this.router.navigateByUrl("login");
   }
 
-  async vistaUser(){
+  async vistaUsuario(){
     console.log("USUARIOS STORAGE",await this.storageService.obtenerUser());
   }
 
@@ -61,12 +61,12 @@ export class RegistroPage implements OnInit {
       await this.helper.mostrarAlerta("Debe ingresar un correo","Error");
       return;
     }
-    if (!this.validarRut(this.rut)) {
+    if (!this.v_Rut(this.rut)) {
       await loader.dismiss();
       await this.helper.mostrarAlerta("RUT no válido", "Error");
       return;
     }
-    if (!this.validarNombre(this.nombre)) {
+    if (!this.v_Nombre(this.nombre)) {
       await loader.dismiss();
       await this.helper.mostrarAlerta("Nombre no válido", "Error");
       return;
@@ -105,7 +105,7 @@ export class RegistroPage implements OnInit {
   }
 
 
-validarNombre(nombre: string): boolean {
+v_Nombre(nombre: string): boolean {
    
     if (nombre.length < 3) {
       return false; 
@@ -114,7 +114,7 @@ validarNombre(nombre: string): boolean {
     return true;
   }
 
-validarRut(rut: string): boolean {
+v_Rut(rut: string): boolean {
     rut = rut.replace(/\./g, '').replace('-', '').toUpperCase();
     const cuerpo = rut.slice(0, -1);
     const digitoVerificador = rut.slice(-1);

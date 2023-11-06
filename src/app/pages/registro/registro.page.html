@@ -1,12 +1,16 @@
 <ion-header [translucent]="true">
-  <<ion-toolbar>
+  <<ion-toolbar class="tol">
     <ion-title>Registro</ion-title>
+
+    <ion-icon slot="start" size="large" name="skull-outline"></ion-icon>
+
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="fondo" [fullscreen]="true">
 
-  <ion-card>
+  <ion-card class="card1">
 
     <ion-card-content>
 
@@ -28,14 +32,14 @@
 
       
       <ion-item>
-        <ion-input  [(ngModel)]="rut" label="Ingrese Rut:" type="tel" labelPlacement="floating" placeholder="21333111-1"></ion-input>
+        <ion-input  [(ngModel)]="rut" label="Ingrese Rut:" type="tel" labelPlacement="floating" ></ion-input>
       </ion-item>
   
   
 
       <ion-label>Region</ion-label>
 
-      <ion-list>
+      <ion-list class="lista1">
         <ion-item>
           <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione" [(ngModel)]="regionSel">
             <ion-select-option [value]="r.id" *ngFor="let r of regiones">{{r.nombre}}</ion-select-option>
@@ -46,7 +50,7 @@
 
       <ion-label>Comuna</ion-label>
 
-      <ion-list>
+      <ion-list class="lista2">
         <ion-item>
           <ion-select  placeholder="Seleccione" [(ngModel)]="comunaSel">
             <ion-select-option [value]="r.id" *ngFor="let r of comunas">{{r.nombre}}</ion-select-option>
@@ -59,12 +63,12 @@
 
 
       <ion-col>
-        <ion-button class="xico1" (click)="registro()"  shape="round">Crear</ion-button>
+        <ion-button class="boton" (click)="registro()"  shape="round">Crear</ion-button>
       </ion-col>
 
     
         <ion-col>
-          <ion-button class="xico" (click)="volver()" shape="round">Volver</ion-button>
+          <ion-button class="boton1" (click)="volver()" shape="round">Volver</ion-button>
         </ion-col>
 
       </ion-card-content>
