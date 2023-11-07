@@ -1,6 +1,6 @@
 
 .contenido {
-    --background: #ffffff;
+    --background: #000000;
     background-size: cover;
     height: auto;
   }
@@ -10,7 +10,7 @@
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    color: #000; 
+    color: #ffffff; 
   }
   
   
@@ -40,7 +40,7 @@
   ion-button {
     --background: #b1a750;
     --color: #000000; 
-    --border: #000;
+    --border: #ffffff;
     --border-radius: 70px;
   }
   

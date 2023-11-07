@@ -12,10 +12,32 @@
 
 <ion-content [fullscreen]="true" class="custom-menu-content">
 
-
+  <ng-container *ngIf="!loading">
+    <ng-container *ngFor="let menu of arrayMenu">
+      <ion-card class="menuEnabled" [routerLink]="menu.url" *ngIf="menu.disabled">
+        <div (click)="Toast_3()" class="box">
+        
+          <h4>
+          <ion-icon size="large" [name]="menu.icono"></ion-icon>
+           PERFIL
+          </h4>
+        </div>
+      </ion-card> 
+  
+    </ng-container>
+  </ng-container>
+  
+  <ng-container *ngIf="loading"> 
+    <div class="boxSkeleton" *ngFor="let item of [1,2,3,4,5]">
+      <ion-skeleton-text class="skeleton"></ion-skeleton-text>
+    </div>
+  </ng-container>
 
 
 <ion-card class="card1">
+  <ion-card-header>
+    <ion-card-title class="titulo">MENU</ion-card-title>
+  </ion-card-header>
 <ion-card-content id="car2">
   <ion-button (click)="Toast()" shape="round" expand="full" (click)="Asistencia()" class="custom-button custom-attendance-button">Asistencia
       <ion-icon slot="end" name="calendar-outline"></ion-icon>
@@ -33,26 +55,6 @@
       <ion-icon slot="end" name="exit-outline"></ion-icon>
   </ion-button>
 </ion-card-content>
-
-<ng-container *ngIf="!loading">
-  <ng-container *ngFor="let menu of arrayMenu">
-    <ion-card class="menuEnabled" [routerLink]="menu.url" *ngIf="menu.disabled">
-      <div (click)="Toast_3()" class="box">
-      
-        <h4> PERFIL
-        <ion-icon size="large" [name]="menu.icono"></ion-icon>
-        </h4>
-      </div>
-    </ion-card> 
-
-  </ng-container>
-</ng-container>
-
-<ng-container *ngIf="loading"> 
-  <div class="boxSkeleton" *ngFor="let item of [1,2,3,4,5]">
-    <ion-skeleton-text class="skeleton"></ion-skeleton-text>
-  </div>
-</ng-container>
 
 
 </ion-card>

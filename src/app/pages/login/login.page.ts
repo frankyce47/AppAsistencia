@@ -59,7 +59,7 @@ export class LoginPage implements OnInit {
   async Toast4() {
     const toast = await this.toastController.create({
       message: 'INGRESE UN CORREO VALIDO',
-      duration: 4000,
+      duration: 1000,
       position: 'bottom',
     });
   

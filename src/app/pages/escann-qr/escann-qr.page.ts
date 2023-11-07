@@ -13,6 +13,7 @@ import { Asistencia } from 'src/app/models/asistencia';
   styleUrls: ['./escann-qr.page.scss'],
 })
 export class EscannQrPage implements OnInit {
+  imageUrl: string | undefined;
 
   resultQr:any[]=[];
   nombre:string = '';
@@ -23,6 +24,8 @@ export class EscannQrPage implements OnInit {
   leccion:string = "";
   sala:string = "";
   seccion:string = "";
+
+  
 
   constructor(private helper:HelperService,) { 
     
@@ -70,7 +73,7 @@ export class EscannQrPage implements OnInit {
     });
 
 
-    const imageUrl = image.dataUrl;
+    this.imageUrl = image.dataUrl;
   }
 
 

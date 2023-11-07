@@ -1,0 +1,46 @@
+
+.custom-menu-content {
+    --background: #ffffff00;
+    background-image: url('https://thypix.com/wp-content/uploads/2022/09/rick-and-morty-phone-wallpaper-thypix-8-408x816.jpg');
+    background-size: cover;
+    height: auto;
+}  
+
+  ion-title {
+    color: #ffffff; 
+    font-weight: bold;
+  }
+  
+  ion-icon[name="close-outline"] {
+    font-size: 25px;
+    color: #ff0000; 
+  }
+  
+
+  ion-card {
+    max-width: 300px; 
+    margin: 0 auto; 
+    border: none;
+    border-radius: 10px;
+    margin-top: 90px;
+  }
+  
+
+  ion-card-content {
+    font-weight: bold;
+    color: #ffffff; 
+  }
+  
+
+  ion-button {
+    --background: #7a1a92; 
+    color: #fff; 
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .tol{
+    --background: #000;
+  }
+  
