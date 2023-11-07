@@ -27,22 +27,32 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
+    canActivate:[AngularFireAuthGuard], 
+    data:{authGuardPipe: redireccionLogin},
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
+    canActivate:[AngularFireAuthGuard], 
+    data:{authGuardPipe: redireccionLogin},
     path: 'asistencia',
     loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   },
   {
+    canActivate:[AngularFireAuthGuard], 
+    data:{authGuardPipe: redireccionLogin},
     path: 'escann-qr',
     loadChildren: () => import('./pages/escann-qr/escann-qr.module').then( m => m.EscannQrPageModule)
   },
   {
+    canActivate:[AngularFireAuthGuard], 
+    data:{authGuardPipe: redireccionLogin},
     path: ':num/perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
+    canActivate:[AngularFireAuthGuard], 
+    data:{authGuardPipe: redireccionLogin},
     path: 'resul-qr',
     loadChildren: () => import('./modals/resul-qr/resul-qr.module').then( m => m.ResulQrPageModule)
   },
