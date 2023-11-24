@@ -10,22 +10,21 @@
 
 <ion-content class="contenido-menu" [fullscreen]="true">
 
-  <ion-card>
+  <ion-card *ngFor="let i of asistencias">
     <ion-card-header>
-      <ion-card-title>Detalles de la Clase</ion-card-title>
+      <ion-card-title>{{ i.asignatura }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <p>Asignatura: {{asignatura}}  </p>
-      <p >Docente: {{docente}}  </p>
-      <p >Fecha: {{fecha}}  </p>
-      <p >Hora: {{hora}}  </p>
-      <p >Leccion: {{leccion}}  </p>
-      <p >Sala: {{sala}}  </p>
-      <p >Seccion: {{seccion}}  </p>
-       
-      
-    </ion-card-content>
 
+    <ion-card-content>
+      <p>Docente: {{ i.docente }}</p>
+      <p>Fecha: {{ i.fecha }}</p>
+      <p>Hora: {{ i.hora }}</p>
+      <p>Leccion: {{ i.leccion }}</p>
+      <p>Sala: {{ i.sala }}</p>
+      <p>Seccion: {{ i.seccion }}</p>
+
+
+    </ion-card-content>
   </ion-card>
 
 

@@ -15,7 +15,7 @@ export const environment = {
 
   },
 
-  apiUrl:"https://dev.matiivilla.cl/duoc/location/"
+ 
 
  
 };

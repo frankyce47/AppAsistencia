@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HelperService } from 'src/app/services/helper.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Region } from 'src/app/models/region';
-import { LocationService } from 'src/app/services/location.service';
+import { JokeService } from 'src/app/services/joke.service';
 
 
 
@@ -19,24 +19,22 @@ export class RegistroPage implements OnInit {
   contrasenna:string = "";
   nombre:string = "";
   rut:string ="";
-  comunas:any[]=[];
-  regiones:Region[]=[];
 
-  comunaSel:number = 0;
-  regionSel:number = 0;
+
+  
 
   constructor(private router:Router,
               private auth:AngularFireAuth,
               private helper:HelperService,
               private storageService:StorageService,
-              private locationService:LocationService
+              
 
             ) { }
 
   ngOnInit() {
 
     this.vistaUsuario();
-    this.cargarRegion();
+   
 
 
 
@@ -134,27 +132,7 @@ v_Rut(rut: string): boolean {
   }
 
 
-  async cargarComuna(){
-    try {
-      const req = await this.locationService.getComuna(this.regionSel);
-      this.comunas = req.data;
-    } catch (error:any) {
-      console.log("ERROR", error);
-      
-      this.helper.mostrarAlerta(error.error.msg,"Error")
-    }
-  }
 
-  
-  async cargarRegion(){
-    try {
-      const req = await this.locationService.getRegion();
-      this.regiones = req.data;
-      console.log("REGIONES",this.regiones);
-    } catch (error) {
-      
-    }
-  }
   
 
 

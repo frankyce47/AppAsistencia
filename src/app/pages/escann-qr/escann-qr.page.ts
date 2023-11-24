@@ -4,6 +4,8 @@ import { HelperService } from 'src/app/services/helper.service';
 import { ResulQrPage } from 'src/app/modals/resul-qr/resul-qr.page';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Asistencia } from 'src/app/models/asistencia';
+import { AsistenciaService } from 'src/app/services/asistencia.service';
+import { Router } from '@angular/router';
 
 
 
@@ -15,7 +17,7 @@ import { Asistencia } from 'src/app/models/asistencia';
 export class EscannQrPage implements OnInit {
   imageUrl: string | undefined;
 
-  resultQr:any[]=[];
+  infoQr:any[]=[];
   nombre:string = '';
   asignatura:string = "";
   docente:string = "";
@@ -27,7 +29,9 @@ export class EscannQrPage implements OnInit {
 
   
 
-  constructor(private helper:HelperService,) { 
+  constructor(private helper:HelperService,
+             private asistenciaService:AsistenciaService,
+            private router:Router) { 
     
   }
 
@@ -38,10 +42,15 @@ export class EscannQrPage implements OnInit {
     var resultadoQr = (await BarcodeScanner.scan()).code;
      
     if (resultadoQr) {
-      console.log("QR", JSON.parse(resultadoQr));
+      const infoQr = JSON.parse(resultadoQr);
+
+      const parametros = {dataQr:infoQr};
+    
+      this.helper.showModal(ResulQrPage,parametros);
     }
-    var infoQr = [];
-    infoQr.push(
+    var infoQr = 
+    [
+    
       {
         asignatura:this.asignatura,
         docente:this.docente,
@@ -49,18 +58,12 @@ export class EscannQrPage implements OnInit {
         hora:this.hora,
         leccion:this.leccion,
         sala:this.sala,
-        seccion:this.seccion,
+        seccion:this.seccion
 
 
       
-        },
-      
-              );
-
-              const parametros = {dataQr:infoQr};
-    
-    this.helper.showModal(ResulQrPage,parametros);
-
+        }
+      ];
   }
 
   

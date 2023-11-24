@@ -7,23 +7,36 @@
 
 <ion-content class="custom-menu-content" [fullscreen]="true">
 
-    <ion-card *ngFor="let i of dataQr">
+  <ion-card>
     <ion-card-header>
-      
-  
-    
+      Información del código QR
     </ion-card-header>
-  
     <ion-card-content>
-      <p>Asignatura: {{dataQr.asignatura}}  </p>
-      <p>Docente: {{dataQr.docente}}</p>
-      <p>Fecha:  {{dataQr.fecha}}</p>
-      <p>Hora {{dataQr.hora}}</p>
-      <p>Sala: {{dataQr.sala}} </p>
-      <p>Seccion: {{dataQr.seccion}}  </p>
-      <p>Leccion: {{dataQr.leccion}}  </p>
-
-      <ion-button shape="round" (click)="Asistencia1()">guardar</ion-button>
+      <ion-list>
+        <ion-item>
+          Asignatura: {{ infoQr.asignatura }}
+        </ion-item>
+        <ion-item>
+          Docente: {{ infoQr.docente }}
+        </ion-item>
+        <ion-item>
+          Fecha: {{ infoQr.fecha }}
+        </ion-item>
+        <ion-item>
+          Hora: {{ infoQr.hora }}
+        </ion-item>
+        <ion-item>
+          Lección: {{ infoQr.leccion }}
+        </ion-item>
+        <ion-item>
+          Sala: {{ infoQr.sala }}
+        </ion-item>
+        <ion-item>
+          Sección: {{ infoQr.seccion }}
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
+  
+  <ion-button shape="round" (click)="guardarAsistencia()">guardar</ion-button>
 </ion-content>

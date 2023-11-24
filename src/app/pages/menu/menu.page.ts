@@ -9,6 +9,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastController } from '@ionic/angular';
 import { Menu } from 'src/app/models/menu';
+import { JokeService } from 'src/app/services/joke.service';
 
 
 @Component({
@@ -31,6 +32,8 @@ export class MenuPage implements OnInit {
 
   email: string | null;
 
+  chiste: string="";
+
 
 
   constructor(private menuCtrl: MenuController,
@@ -42,6 +45,7 @@ export class MenuPage implements OnInit {
               private auth:AngularFireAuth,
               public toastController: ToastController,
               private navCtrl: NavController,
+              private jokeService: JokeService
             
              
               
@@ -157,6 +161,25 @@ export class MenuPage implements OnInit {
   simularCargaPerfil = () => {
     this.loading = false;
   }
+
+  obtenerChisteProgramacion() {
+    this.jokeService.obtenerChisteProgramacion().subscribe(
+      (data: any) => {
+        if (data.type === 'twopart') {
+          this.chiste = `${data.setup} ${data.delivery}`;
+        } else if (data.type === 'single') {
+          this.chiste = data.joke;
+        } else {
+          this.chiste = 'No se pudo obtener un chiste válido.';
+        }
+      },
+      error => {
+        console.error('Error al obtener el chiste:', error);
+      }
+    );
+  }
+
+
   
   
 
