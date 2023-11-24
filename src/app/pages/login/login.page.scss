@@ -1,0 +1,85 @@
+/* Estilos para el fondo */
+.contenido {
+    --background: #ffffff00;
+    background-image: url('https://e0.pxfuel.com/wallpapers/782/1012/desktop-wallpaper-m-tondi-martha-on-design-tshirt-fondo-pantalla-celular-minimalist-black.jpg');
+    background-size: cover;
+    height: auto;
+  }
+  .item1{
+    display: block;
+    width: 100%;
+    --background: #aaf0cf; 
+    --color: #000000; 
+    --border: #000;
+    --border-radius: 7px;
+    margin-top: 20px;
+
+  }
+  .item2{
+    display: block;
+    width: 100%;
+    --background: #aaf0cf; 
+    --color: #000000; 
+    --border: #000;
+    --border-radius: 7px;
+    margin-top: 25px;
+    
+  }
+ 
+  ion-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0px 0;
+    color: #ffffff; 
+  }
+  
+  
+  ion-card {
+    max-width: 350px; 
+    margin-top: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff00;
+  }
+  
+  ion-card-title {
+    text-align: center;
+    font-size: 18px;
+    color: #000; 
+  }
+  
+  ion-card-content ion-item {
+    margin-bottom: 10px;
+  }
+  
+  ion-button.log, ion-button.reg, ion-button.forgot {
+    display: block;
+    width: 100%;
+    --background: #aaf0cf; 
+    --color: #000000; 
+    --border: #000;
+    --border-radius: 70px;
+    margin-top: 25px;
+  }
+  
+  ion-button.log:hover, ion-button.reg:hover, ion-button.forgot:hover {
+    background-color: #a14100; 
+  }
+  
+  
+  ion-note.color-danger {
+    color: #ff0000; 
+  }
+
+  .tol{
+    background: #000000;
+  }
+  .back{
+    --background: #aaf0cf; 
+    --color: #000000; 
+    --border: #000;
+
+  }
+  

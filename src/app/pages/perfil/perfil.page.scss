@@ -1,0 +1,44 @@
+
+ion-content.custom-menu-content {
+  --background: #ffffff00;
+  background-image: url('https://i.pinimg.com/originals/eb/f6/fb/ebf6fbde06882291bf0614db5d67c8ec.jpg');
+  background-size: cover;
+  height: auto;
+}
+
+ion-title {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+ion-toolbar {
+  background-color: #000000; 
+  border-bottom: 1px solid #ccc; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+ion-card {
+  max-width: 300px; 
+  margin: 0 auto; 
+  border: none;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+
+ion-card img {
+  max-width: 100%; 
+  border-radius: 10px 10px 0 0; 
+}
+
+ion-card-header ion-card-subtitle {
+  font-weight: bold;
+  color: #ffffff; 
+}
+
+
+img {
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}

@@ -1,0 +1,54 @@
+
+.contenido {
+    --background: #000000;
+    background-size: cover;
+    height: auto;
+  }
+  
+  
+  ion-title {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff; 
+  }
+  
+  
+  ion-button[color="danger"] {
+    background-color: #ff0000; 
+    color: #fff; 
+    border: none;
+    border-radius: 20px;
+  }
+  
+  
+  ion-item {
+    margin-bottom: 20px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+    color: #a54747; 
+  }
+  
+  ion-input {
+    border: 1px solid #000; 
+    border-radius: 5px;
+  }
+  
+ 
+  ion-button {
+    --background: #b1a750;
+    --color: #000000; 
+    --border: #ffffff;
+    --border-radius: 70px;
+  }
+  
+  ion-button:hover {
+    background-color: #ff6600; 
+  }
+  
+  .tol2{
+    background: #000000;
+  }
+  

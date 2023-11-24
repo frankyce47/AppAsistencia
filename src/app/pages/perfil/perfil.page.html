@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+
+    <ion-button slot="start" [routerLink]="'/menu'">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="custom-menu-content" [fullscreen]="true">
+  <ion-card>
+    <img alt="xd" src="https://sm.ign.com/ign_es/news/r/rick-and-m/rick-and-morty-season-7-gets-rick-heavy-first-look-fall-rele_8uza.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle *ngFor="let i of usuario">Nombre: {{ i.nombre }}</ion-card-subtitle>
+      <ion-card-subtitle *ngFor="let i of usuario">RUT: {{ i.rut }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+
+</ion-content>

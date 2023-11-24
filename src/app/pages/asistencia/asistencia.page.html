@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="tol1">
+    <ion-title>Registro de Clase</ion-title>
+
+    <ion-button shape="round" class="botonvolver" [routerLink]="'/menu'">
+      <ion-icon size="large" slot="start" name="caret-back-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido-menu" [fullscreen]="true">
+
+  <ion-card *ngFor="let i of asistencias">
+    <ion-card-header>
+      <ion-card-title>{{ i.asignatura }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Docente: {{ i.docente }}</p>
+      <p>Fecha: {{ i.fecha }}</p>
+      <p>Hora: {{ i.hora }}</p>
+      <p>Leccion: {{ i.leccion }}</p>
+      <p>Sala: {{ i.sala }}</p>
+      <p>Seccion: {{ i.seccion }}</p>
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
