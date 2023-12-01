@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EscannQrPage } from './escann-qr.page';
 
-describe('EscannQrPage', () => {
+describe('Pruebas para scanner', () => {
   let component: EscannQrPage;
   let fixture: ComponentFixture<EscannQrPage>;
 
